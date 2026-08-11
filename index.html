@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rukayyat Adelekan | Business Intelligence & Data Analyst</title>
+
+    <meta name="description" content="Rukayyat Adelekan - Business Intelligence & Data Analyst specializing in SQL, Power BI, Tableau, Excel, KPI reporting and data-driven business insights.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1e293b;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 70px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: #475569;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: #f8fafc;
+            padding: 90px 0;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text .intro {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h2 {
+            font-size: 1.45rem;
+            font-weight: 500;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.05rem;
+            max-width: 650px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            border: 1px solid #cbd5e1;
+            color: #0f172a;
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        .profile-container {
+            flex-shrink: 0;
+        }
+
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        /* ABOUT */
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            margin-bottom: 18px;
+            color: #475569;
+            font-size: 1.05rem;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            background: #f8fafc;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+        }
+
+        .skill-card h3 {
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        .skill-card p {
+            color: #64748b;
+        }
+
+        /* FEATURED PROJECT */
+
+        .featured-project {
+            background: #f8fafc;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .project-image-placeholder {
+            min-height: 300px;
+            background: #e2e8f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .project-details h3 {
+            font-size: 1.8rem;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        .project-details p {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        .project-card p {
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #93c5fd;
+        }
+
+        .contact-links a:hover {
+            color: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="container nav-container">
+
+            <div class="logo">
+                Rukayyat Adelekan
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#featured">Featured Project</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <div class="intro">
+                    Hello, I'm
+                </div>
+
+                <h1>
+                    Rukayyat Adelekan
+                </h1>
+
+                <h2>
+                    Business Intelligence & Data Analyst
+                </h2>
+
+                <p>
+                    I transform data into actionable business insights through
+                    SQL, Power BI, Tableau, Excel and data-driven analysis.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#featured" class="btn btn-primary">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn btn-secondary">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-container">
+
+                <img
+                    src="profile.png"
+                    alt="Rukayyat Adelekan - Business Intelligence & Data Analyst"
+                    class="profile-image"
+                >
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Business Intelligence, analytics and business problem-solving.</p>
+            </div>
+
+            <div class="about-content">
+
+                <p>
+                    I am a Business Intelligence & Data Analyst with experience
+                    transforming raw data into meaningful insights that support
+                    better business decisions.
+                </p>
+
+                <p>
+                    My background spans customer experience, operations analysis
+                    and business intelligence, giving me a strong understanding
+                    of both business processes and analytical problem-solving.
+                </p>
+
+                <p>
+                    I specialize in SQL, Power BI, Tableau, Excel, KPI reporting,
+                    dashboard development, data quality analysis and stakeholder
+                    communication.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills" class="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Core Skills</h2>
+
+                <p>
+                    Technical and business skills I use to turn data into insights.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <h3>Business Intelligence</h3>
+
+                    <p>
+                        Power BI, Tableau, KPI Reporting, Dashboard Development,
+                        Data Visualization and Executive Reporting.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>Data & Analytics</h3>
+
+                    <p>
+                        SQL, T-SQL, Power Query, Excel, DAX, Data Modelling,
+                        Data Quality and Exploratory Analysis.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>Business & Strategy</h3>
+
+                    <p>
+                        Business Analysis, Forecasting, Root Cause Analysis,
+                        Stakeholder Engagement and Data Storytelling.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURED PROJECT -->
+
+    <section id="featured" class="featured-project">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Featured Case Study</h2>
+
+                <p>
+                    A business intelligence project focused on marketing performance.
+                </p>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="project-image-placeholder">
+
+                    <p>
+                        Marketing Performance Forecasting Dashboard<br>
+                        <strong>Power BI</strong>
+                        <br><br>
+                        Dashboard preview will be added here.
+                    </p>
+
+                </div>
+
+
+                <div class="project-details">
+
+                    <h3>
+                        Marketing Performance Forecasting & Budget Optimization
+                    </h3>
+
+                    <p>
+                        An executive Business Intelligence dashboard designed
+                        to analyze marketing performance, evaluate advertising
+                        efficiency and forecast future revenue.
+                    </p>
+
+                    <div class="project-tools">
+
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">Power Query</span>
+                        <span class="tag">Forecasting</span>
+
+                    </div>
+
+                    <a href="#projects" class="btn btn-primary">
+                        View Case Study
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Selected Projects</h2>
+
+                <p>
+                    Practical analytics projects demonstrating technical and business skills.
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <div class="project-card">
+
+                    <h3>
+                        Global COVID-19 Data Analysis
+                    </h3>
+
+                    <p>
+                        SQL-based analysis exploring cases, deaths, vaccination
+                        trends and population-level metrics using joins, CTEs,
+                        temporary tables and window functions.
+                    </p>
+
+                    <div class="project-tools">
+
+                        <span class="tag">SQL</span>
+                        <span class="tag">T-SQL</span>
+                        <span class="tag">CTEs</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>
+                        Marketing Revenue & Conversion Forecasting
+                    </h3>
+
+                    <p>
+                        Excel-based forecasting analysis using historical
+                        marketing data to support revenue planning and
+                        performance decision-making.
+                    </p>
+
+                    <div class="project-tools">
+
+                        <span class="tag">Excel</span>
+                        <span class="tag">Forecasting</span>
+                        <span class="tag">Marketing Analytics</span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <div class="container">
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                I'm open to Business Intelligence, Data Analytics and
+                reporting opportunities across Germany and Europe.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="https://www.linkedin.com/" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/rukies01" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="mailto:YOUR-EMAIL@example.com">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Rukayyat Adelekan. All rights reserved.
+
+    </footer>
+
+</body>
+</html>
