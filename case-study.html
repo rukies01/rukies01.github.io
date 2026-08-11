@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marketing Performance Forecasting & Budget Optimization | Rukayyat Adelekan</title>
+
+    <meta name="description"
+          content="Power BI case study analysing marketing performance, forecasting, funnel efficiency, ROI and budget optimization.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1e293b;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0f172a;
+        }
+
+        .back-link {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: #1d4ed8;
+        }
+
+        /* HERO */
+
+        .case-hero {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+
+        .case-hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: #0f172a;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        .case-hero .subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 850px;
+            margin-bottom: 30px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .section-text {
+            max-width: 900px;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        /* KPI CARDS */
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .kpi-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 25px;
+            background: #ffffff;
+        }
+
+        .kpi-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+
+        .kpi-label {
+            color: #64748b;
+        }
+
+        /* DASHBOARD */
+
+        .dashboard-section {
+            background: #f8fafc;
+        }
+
+        .dashboard-image {
+            width: 100%;
+            display: block;
+            margin: 30px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+        }
+
+        .image-caption {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: -15px;
+            margin-bottom: 40px;
+        }
+
+        /* ANALYSIS GRID */
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .analysis-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .analysis-card h3 {
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .analysis-card p {
+            color: #64748b;
+        }
+
+        /* TABLE */
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        /* RECOMMENDATION */
+
+        .recommendation {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .recommendation p {
+            color: #334155;
+        }
+
+        /* TOOLS */
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .tool {
+            border: 1px solid #cbd5e1;
+            padding: 9px 16px;
+            border-radius: 6px;
+            color: #475569;
+            background: white;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            border: 1px solid #cbd5e1;
+            color: #0f172a;
+        }
+
+        .btn-secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .case-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="container nav-container">
+
+        <div class="logo">
+            Rukayyat Adelekan
+        </div>
+
+        <a href="index.html" class="back-link">
+            ← Back to Portfolio
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<header class="case-hero">
+
+    <div class="container">
+
+        <h1>
+            Marketing Performance Forecasting & Budget Optimization
+        </h1>
+
+        <p class="subtitle">
+            A Business Intelligence project analysing marketing performance,
+            funnel efficiency, advertising ROI and budget allocation using
+            Power BI, Excel and scenario analysis.
+        </p>
+
+
+        <div class="tags">
+
+            <span class="tag">Power BI</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Power Query</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Forecasting</span>
+            <span class="tag">Scenario Analysis</span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- BUSINESS CHALLENGE -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Business Challenge
+        </h2>
+
+        <p class="section-text">
+
+            Marketing teams need to understand whether increasing advertising
+            investment is translating into sustainable revenue growth,
+            stronger conversions and improved return on investment.
+
+        </p>
+
+        <p class="section-text">
+
+            The objective of this project was to analyse historical marketing
+            performance, identify trends and seasonality, evaluate funnel
+            efficiency and test whether increasing advertising spend would
+            improve marketing returns.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- OBJECTIVES -->
+
+<section style="background:#f8fafc;">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Analytical Objectives
+        </h2>
+
+        <div class="analysis-grid">
+
+            <div class="analysis-card">
+
+                <h3>1. Understand Performance</h3>
+
+                <p>
+                    Analyse revenue, leads, conversions and ROI over time
+                    to identify trends and seasonal patterns.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>2. Evaluate Funnel Efficiency</h3>
+
+                <p>
+                    Examine website sessions, leads, conversions and
+                    lead-to-conversion performance.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>3. Measure Spend Efficiency</h3>
+
+                <p>
+                    Compare advertising spend with revenue and evaluate
+                    indicators such as CPL and revenue per lead.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>4. Test Budget Scenarios</h3>
+
+                <p>
+                    Simulate increased advertising spend and compare the
+                    resulting ROI with actual performance.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- KEY KPIs -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Key Performance Indicators
+        </h2>
+
+        <p class="section-text">
+            The dashboard provides an executive-level view of the key
+            marketing performance indicators.
+        </p>
+
+
+        <div class="kpi-grid">
+
+            <div class="kpi-card">
+                <div class="kpi-value">€1.53M</div>
+                <div class="kpi-label">Total Revenue</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-value">66K</div>
+                <div class="kpi-label">Total Leads</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-value">10K</div>
+                <div class="kpi-label">Total Conversions</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-value">15.55%</div>
+                <div class="kpi-label">Lead-to-Conversion Rate</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-value">3.08</div>
+                <div class="kpi-label">ROI</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-value">€5.71</div>
+                <div class="kpi-label">Cost per Lead</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- DASHBOARD -->
+
+<section class="dashboard-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Power BI Dashboard
+        </h2>
+
+        <p class="section-text">
+
+            The interactive dashboard was structured around executive
+            performance, funnel performance and marketing spend efficiency.
+
+        </p>
+
+
+        <!-- IMAGE 1 -->
+
+        <img
+            src="dashboard-executive.png"
+            alt="Marketing Performance Power BI Executive Summary Dashboard"
+            class="dashboard-image"
+        >
+
+        <p class="image-caption">
+            Executive Summary — revenue, ROI and marketing performance trends.
+        </p>
+
+
+        <!-- IMAGE 2 -->
+
+        <img
+            src="dashboard-funnel.png"
+            alt="Marketing Funnel Performance Power BI Dashboard"
+            class="dashboard-image"
+        >
+
+        <p class="image-caption">
+            Funnel Performance — website sessions, leads and conversions.
+        </p>
+
+
+        <!-- IMAGE 3 -->
+
+        <img
+            src="dashboard-spend.png"
+            alt="Marketing Spend Efficiency Power BI Dashboard"
+            class="dashboard-image"
+        >
+
+        <p class="image-caption">
+            Spend Efficiency — advertising spend, ROI and revenue per lead.
+        </p>
+
+
+        <!-- IMAGE 4 -->
+
+        <img
+            src="dashboard-simulation.png"
+            alt="Marketing Budget Simulation Power BI Dashboard"
+            class="dashboard-image"
+        >
+
+        <p class="image-caption">
+            Budget Simulation — actual versus simulated advertising spend and ROI.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- KEY FINDINGS -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Key Findings
+        </h2>
+
+
+        <div class="analysis-grid">
+
+
+            <div class="analysis-card">
+
+                <h3>Revenue Growth & Seasonality</h3>
+
+                <p>
+                    Revenue demonstrates an overall upward trend across
+                    the analysis period, with noticeable seasonal fluctuations
+                    and stronger performance toward Q4.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>Funnel Performance</h3>
+
+                <p>
+                    Lead and conversion volumes generally trend upward,
+                    while the lead-to-conversion rate remains relatively
+                    stable at 15.55%.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>Spend Efficiency</h3>
+
+                <p>
+                    Increasing advertising spend can generate additional
+                    revenue, but the analysis suggests that incremental
+                    returns may decline at higher spending levels.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>Revenue per Lead</h3>
+
+                <p>
+                    Revenue per lead provides an additional view of
+                    acquisition efficiency and helps evaluate whether
+                    additional leads are translating into sufficient value.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SCENARIO ANALYSIS -->
+
+<section style="background:#f8fafc;">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Budget Scenario Analysis
+        </h2>
+
+        <p class="section-text">
+
+            To test whether increasing advertising investment would improve
+            efficiency, I created a simulated spending scenario that
+            increased advertising spend during selected periods and compared
+            simulated ROI with actual ROI.
+
+        </p>
+
+
+        <table class="comparison-table">
+
+            <tr>
+
+                <th>Metric</th>
+
+                <th>Actual</th>
+
+                <th>Simulated</th>
+
+            </tr>
+
+            <tr>
+
+                <td>ROI</td>
+
+                <td>3.08</td>
+
+                <td>2.93</td>
+
+            </tr>
+
+            <tr>
+
+                <td>ROI Uplift</td>
+
+                <td>—</td>
+
+                <td>-5.05%</td>
+
+            </tr>
+
+        </table>
+
+
+        <div class="recommendation">
+
+            <p>
+
+                <strong>Key insight:</strong>
+                The simulated increase in advertising spend produced higher
+                spending but a lower overall ROI. This suggests that simply
+                increasing the total marketing budget may not be the most
+                efficient strategy when incremental returns are diminishing.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- RECOMMENDATIONS -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Business Recommendations
+        </h2>
+
+
+        <div class="analysis-grid">
+
+
+            <div class="analysis-card">
+
+                <h3>1. Prioritize Efficient Periods</h3>
+
+                <p>
+                    Concentrate marketing investment on periods and campaigns
+                    where additional spend continues to generate attractive
+                    returns.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>2. Optimize Conversion</h3>
+
+                <p>
+                    Improve conversion efficiency alongside acquisition growth
+                    rather than relying solely on increased traffic or
+                    advertising spend.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>3. Monitor Incremental ROI</h3>
+
+                <p>
+                    Evaluate the incremental return generated by additional
+                    advertising investment before scaling campaign budgets.
+                </p>
+
+            </div>
+
+
+            <div class="analysis-card">
+
+                <h3>4. Use Scenario Planning</h3>
+
+                <p>
+                    Incorporate budget simulations into marketing planning
+                    to evaluate potential outcomes before making allocation
+                    decisions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="recommendation">
+
+            <p>
+
+                <strong>Overall recommendation:</strong>
+                Rather than increasing total advertising spend indiscriminately,
+                marketing investment should be concentrated on high-efficiency
+                periods and campaigns while simultaneously improving
+                conversion performance.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- TOOLS -->
+
+<section style="background:#f8fafc;">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Tools & Technical Skills
+        </h2>
+
+        <div class="tools-grid">
+
+            <span class="tool">Power BI</span>
+            <span class="tool">DAX</span>
+            <span class="tool">Power Query</span>
+            <span class="tool">Microsoft Excel</span>
+            <span class="tool">Data Modelling</span>
+            <span class="tool">KPI Development</span>
+            <span class="tool">Forecasting</span>
+            <span class="tool">Scenario Analysis</span>
+            <span class="tool">Data Visualization</span>
+            <span class="tool">Business Analysis</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROJECT LINKS -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Project
+        </h2>
+
+        <p class="section-text">
+
+            This project demonstrates how technical BI capabilities can be
+            combined with business analysis to translate marketing data
+            into actionable recommendations.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a href="index.html" class="btn btn-primary">
+                ← Back to Portfolio
+            </a>
+
+            <a href="https://github.com/rukies01"
+               target="_blank"
+               class="btn btn-secondary">
+                View GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Rukayyat Adelekan — Business Intelligence & Data Analyst
+
+</footer>
+
+
+</body>
+
+</html>
